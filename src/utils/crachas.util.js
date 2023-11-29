@@ -29,7 +29,7 @@ const gerarHtml = (aluno) => {
 }
 
 const criarCrachas = async (alunos) => {
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({ headless: 'new' });
   const page = await browser.newPage();
   await page.setViewport({
     width: 265,
