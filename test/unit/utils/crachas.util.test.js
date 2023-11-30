@@ -18,7 +18,7 @@
       Foto (Opcional)
 */
 
-const { describe, test } = require('@jest/globals');
+const { test } = require('@jest/globals');
 const { criarCrachas } = require('../../../src/utils/crachas.util.js');
 
 const dataUriRegex = /^data:image\/\w+;base64,/;

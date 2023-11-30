@@ -18,9 +18,10 @@ const env = process.env;
 const database = {
   host: env.DB_HOST || 'localhost',
   port: env.DB_PORT || '3306',
-  name: env.DB_NAME || 'test',
-  user: env.DB_USER || 'root',
+  database: env.DB_NAME || 'test',
+  username: env.DB_USER || 'root',
   password: env.DB_PASSWORD || '',
+  dialect: env.DB_DIALECT || 'mysql'
 };
 
 module.exports = database;

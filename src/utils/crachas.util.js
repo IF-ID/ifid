@@ -7,7 +7,7 @@
 
   Último Editor: Murilo
 
-  Status: Em desenvolvimento
+  Status: Finalizado
 
   Notas:
     Falta criar o template do Crachá
@@ -45,8 +45,7 @@ const criarCrachas = async (alunos) => {
   for (const aluno of alunos) {
     let html = gerarHtml(aluno);
     await page.setContent(html);
-    let image = await page.screenshot({ encoding: 'base64' });
-    console.log(`data:image/jpeg;base64,${image}`);
+    let image = await page.screenshot({ encoding: 'base64' });const { test } = require('@jest/globals');
     crachas.push(`data:image/jpeg;base64,${image}`);
   }
 
