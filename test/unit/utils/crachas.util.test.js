@@ -121,4 +121,4 @@ test('Criar 5 Crachás', async () => {
   expect(isDataUri(crachas[2])).toBe(true);
   expect(isDataUri(crachas[3])).toBe(true);
   expect(isDataUri(crachas[4])).toBe(true);
-}, 300000);
+}, 120000);
