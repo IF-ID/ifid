@@ -1,0 +1,188 @@
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Open+Sans:800,400');
+  @import url('https://fonts.googleapis.com/css?family=Open Sans Condensed:300');
+  :root {
+    --width: 7cm;
+    --height: 10cm;
+
+    --primary-color: #518c3e;
+    --text-color: #fff;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .col {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .block {
+    position: relative;
+
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0 5%;
+
+    font-family: 'Open Sans';
+    font-size: 10pt;
+    text-align: center;
+    text-transform: uppercase;
+
+    border: 1px solid #000;
+  }
+
+  .label {
+    position: absolute;
+    top: -4pt;
+    left: 10px;
+
+    padding: 0 5px;
+
+    font-family: 'Open Sans Condensed';
+    font-size: 8pt;
+    line-height: 1em;
+
+    background-color: #fff;
+  }
+</style>
+
+<div class="col" style="
+  width: var(--width);
+  height: var(--height);
+
+  gap: 1.5%;
+
+  padding: 3mm 4mm;
+">
+  <div style="
+    width: 100%;
+    height: calc(var(--height) * 0.07);
+
+    background-color: var(--primary-color);
+  "></div>
+
+  <div class="row" style="
+    gap: 2%;
+  ">
+    <div class="col" style="
+      flex-grow: 1;
+      gap: 2%;
+    ">
+      <div class="row" style="
+        justify-content: start;
+        gap: 5%;
+      ">
+        <img src="data:image/png;base64,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" style="
+          height: calc(var(--height) * 0.13);
+        "/>
+
+        <div>
+          <span style="
+            font-family: 'Open Sans';
+            font-size: 12pt;
+            font-weight: 800;
+            line-height: 1em;
+          ">
+            INSTITUTO<br>FEDERAL<br>
+          </span>
+          <span style="
+            font-family: 'Open Sans';
+            font-size: 10pt;
+            font-weight: 400;
+            line-height: 1em;
+          ">
+            Pará
+          </span>
+        </div>
+      </div>
+
+      <div class="row" style="
+        padding: 0 15%;
+
+        flex-grow: 1;
+        justify-content: center;
+        align-items: center;
+
+        line-height: 16mm;
+        font-family: 'Open Sans';
+        font-size: 14pt;
+        text-transform: capitalize;
+
+        color: var(--text-color);
+        background-color: var(--primary-color);
+      ">
+        {{modalidade}}
+      </div>
+    </div>
+
+    <img src="{{foto}}" style="
+      width: calc(var(--height) * 0.25);
+      height: calc(var(--height) * 0.3);
+
+      object-fit: cover;
+      
+      background-color: var(--primary-color);
+    ">
+  </div>
+
+  <div class="block">
+    <div class="label">Nome</div>
+    {{nome}}
+  </div>
+
+  <div class="block">
+    <div class="label">Curso</div>
+    {{curso}}
+  </div>
+
+  <img src="{{barcode}}" style="
+    width: 108%;
+    height: calc(var(--height) * 0.12);
+
+    object-fit: cover;
+    object-position: 0 30%;
+
+    transform: translateX(-3%);
+  ">
+
+  <div class="col" style="
+    padding: 2% 5%;
+
+    align-items: end;
+
+    color: var(--text-color);
+    background-color: var(--primary-color);
+  ">
+    <span style="
+      padding-right: 30%;
+
+      font-family: 'Open Sans Condensed';
+      font-size: 10pt;
+      line-height: 1em;
+    ">
+      Matrícula<br>
+    </span>
+    <span style="
+      font-family: 'Open Sans';
+      font-size: 14pt;
+      line-height: 1em;
+    ">
+      {{matricula}}
+    </span>
+  </div>
+</div>

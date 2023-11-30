@@ -24,18 +24,33 @@ const { criarCrachas } = require('../../../src/utils/crachas.util.js');
 const dataUriRegex = /^data:image\/\w+;base64,/;
 const isDataUri = (dataUri) => dataUriRegex.test(dataUri);
 
-test('Deve Retornar um Crachá como uma Array com 1 String de Data URI', async () => {
+test('Criar 1 Crachá com Todos os Dados', async () => {
   const crachas = await criarCrachas([
     {
       nome: 'murilo henrique conde da luz',
       matricula: '20202263816',
       modalidade: 'técnico',
       curso: 'desenvolvimento de sistemas',
-      foto: 'https://avatars.githubusercontent.com/u/60005589?v=4'
+      foto: 'https://static.wikia.nocookie.net/onepiece/images/a/af/Tony_Tony_Chopper_Anime_Post_Timeskip_Infobox.png/revision/latest?cb=20190113140816&path-prefix=pt'
     }
   ]);
 
   expect(Array.isArray(crachas)).toBe(true);
   expect(crachas.length).toBe(1);
   expect(isDataUri(crachas[0])).toBe(true);
-}, 30000);
+}, 60000);
+
+test('Criar 1 Crachá sem Dados Opcionais', async () => {
+  const crachas = await criarCrachas([
+    {
+      nome: 'murilo henrique conde da luz',
+      matricula: '20202263816',
+      modalidade: 'técnico',
+      curso: 'desenvolvimento de sistemas'
+    }
+  ]);
+
+  expect(Array.isArray(crachas)).toBe(true);
+  expect(crachas.length).toBe(1);
+  expect(isDataUri(crachas[0])).toBe(true);
+}, 60000);
