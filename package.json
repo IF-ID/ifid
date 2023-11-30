@@ -16,7 +16,8 @@
     "mysql2": "^3.6.5",
     "pug": "^3.0.2",
     "puppeteer": "^21.5.2",
-    "sequelize": "^6.35.1"
+    "sequelize": "^6.35.1",
+    "sha256": "^0.2.0"
   },
   "devDependencies": {
     "jest": "^29.7.0"
