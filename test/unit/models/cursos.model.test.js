@@ -17,6 +17,10 @@ require('dotenv').config({ path: './src/configs/.env' });
 const { test } = require('@jest/globals');
 const Cursos = require('../../../src/models/cursos.model.js');
 
+test('Sincronização da Tabela de Cursos', async () => {
+  let result = await Cursos.sync({ alter: true });
+}, 30000);
+
 test('Modelo da Tabela de Cursos', async () => {
   let table = await Cursos.describe();
 

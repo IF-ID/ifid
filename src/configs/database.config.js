@@ -18,7 +18,7 @@ const env = process.env;
 const database = {
   host: env.DB_HOST || 'localhost',
   port: env.DB_PORT || '3306',
-  database: env.DB_NAME || 'test',
+  database: env.DB_NAME || 'ifid',
   username: env.DB_USER || 'root',
   password: env.DB_PASSWORD || '',
   dialect: env.DB_DIALECT || 'mysql'
