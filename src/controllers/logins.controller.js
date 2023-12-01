@@ -17,7 +17,7 @@ const Usuarios = require('../models/usuarios.model');
 const cadastro = async (data) => {
   const { nome, email, senha } = data;
 
-  let user = await Usuarios.create({
+  const user = await Usuarios.create({
     nome_usuario: nome.toLowerCase().trim(),
     email_usuario: email.toLowerCase().trim(),
     senha_usuario: senha
@@ -26,6 +26,24 @@ const cadastro = async (data) => {
   return user.dataValues.id_usuario;
 }
 
+const login = async (data) => {
+  const { email, senha } = data;
+
+  let user = await Usuarios.findOne({
+    where: {
+      email_usuario: email.toLowerCase().trim(),
+      senha_usuario: senha
+    }
+  });
+
+  if (user) {
+    return user.dataValues.id_usuario;
+  } else {
+    return false;
+  }
+}
+
 module.exports = {
-  cadastro
+  cadastro,
+  login
 }
