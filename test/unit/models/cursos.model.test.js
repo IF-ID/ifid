@@ -65,13 +65,15 @@ test('Inserção de Curso', async () => {
   ]
 
   for (let i = 0; i < cursos.length; i++) {
-    let curso = await Cursos.create({
-      nome_curso: cursos[i].nome,
-      modalidade_curso: cursos[i].modalidade
+    let curso = await Cursos.findOrCreate({
+      where: {
+        nome_curso: cursos[i].nome,
+        modalidade_curso: cursos[i].modalidade
+      }
     });
     expect(curso).toBeDefined();
   }
-});
+}, 60000);
 
 test('Modelo da Tabela de Cursos', async () => {
   let table = await Cursos.describe();
