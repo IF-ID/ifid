@@ -18,6 +18,9 @@ const { validarCurso } = require('../utils/validarDados.util.js');
 const criarCurso = async (curso) => {
   if (!validarCurso(curso)) return false;
 
+  curso.nome = curso.nome.toLowerCase().trim();
+  curso.modalidade = curso.modalidade.toLowerCase().trim();
+
   const cursoExistente = await Cursos.findOne({ where: { nome_curso: curso.nome } });
 
   if (cursoExistente) return false;
@@ -30,18 +33,18 @@ const criarCurso = async (curso) => {
   return cursoCriado.dataValues.id_curso;
 }
 
-const getCurso = async (id) => {
-  const curso = await Cursos.findOne({ where: { id_curso: id } });
+const getCurso = async (idCurso) => {
+  const curso = await Cursos.findOne({ where: { id_curso: idCurso } });
 
   return curso;
 }
 
-const deletarCurso = async (id) => {
-  const curso = await Cursos.findOne({ where: { id_curso: id } });
+const deletarCurso = async (idCurso) => {
+  const curso = await Cursos.findOne({ where: { id_curso: idCurso } });
 
   if (!curso) return false;
 
-  await Cursos.destroy({ where: { id_curso: id } });
+  await Cursos.destroy({ where: { id_curso: idCurso } });
 
   return true;
 }

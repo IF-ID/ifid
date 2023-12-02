@@ -38,10 +38,10 @@ describe('Testes de Cadastro de Curso', () => {
 
     const idCurso = await Cursos.criarCurso(curso);
     const idCurso2 = await Cursos.criarCurso(curso);
+    expect(idCurso).toBeTruthy();
     expect(idCurso2).toBeFalsy();
 
     await Cursos.deletarCurso(idCurso);
-    await Cursos.deletarCurso(idCurso2);
   });
 
   test('Cadastro de Curso com nome vazio', async () => {
@@ -95,6 +95,36 @@ describe('Testes de Cadastro de Curso', () => {
   test('Cadastro de Curso sem nome e modalidade', async () => {
     const curso = {}
 
+    const idCurso = await Cursos.criarCurso(curso);
+    expect(idCurso).toBeFalsy();
+  });
+
+  test('Cadastro de Curso com nome muito longo', async () => {
+    const curso = {
+      nome: 'lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+      modalidade: 'Teste2',
+    }
+    
+    const idCurso = await Cursos.criarCurso(curso);
+    expect(idCurso).toBeFalsy();
+  });
+
+  test('Cadastro de Curso com modalidade muito longa', async () => {
+    const curso = {
+      nome: 'Teste2',
+      modalidade: 'lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+    }
+    
+    const idCurso = await Cursos.criarCurso(curso);
+    expect(idCurso).toBeFalsy();
+  });
+
+  test('Cadastro de Curso com nome e modalidade muito longos', async () => {
+    const curso = {
+      nome: 'lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+      modalidade: 'lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+    }
+    
     const idCurso = await Cursos.criarCurso(curso);
     expect(idCurso).toBeFalsy();
   });

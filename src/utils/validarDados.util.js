@@ -12,6 +12,17 @@
   Notas:
 */
 
+const validarUsuario = (usuario) => {
+  if (!usuario.nome || !usuario.email || !usuario.senha) return false;
+
+  if (usuario.nome.length > 45 || usuario.email.length > 45 || usuario.senha.length > 64) return false;
+
+  const emailPattern = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+  if (!emailPattern.test(usuario.email)) return false;
+
+  return true;
+}
+
 const validarCurso = (curso) => {
   if (!curso.nome || !curso.modalidade) return false;
 
@@ -20,4 +31,4 @@ const validarCurso = (curso) => {
   return true;
 }
 
-module.exports = { validarCurso };
+module.exports = { validarUsuario, validarCurso };

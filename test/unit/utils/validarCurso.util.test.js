@@ -15,7 +15,7 @@
 const { describe, test } = require('@jest/globals');
 const { validarCurso } = require('../../../src/utils/validarDados.util.js');
 
-describe('Testes de Validação de Curso', () => {
+describe('Testes de Validação de Curso Com algum Campo Faltando', () => {
   test('Validação de Curso sem o campo nome', () => {
     const curso = {
       modalidade: 'Teste',
@@ -40,7 +40,9 @@ describe('Testes de Validação de Curso', () => {
     const validacao = validarCurso(curso);
     expect(validacao).toBeFalsy();
   });
+});
 
+describe('Testes de Validação de Curso Com algum Campo Vazio', () => {
   test('Validação de Curso com nome vazio', () => {
     const curso = {
       nome: '',
@@ -70,17 +72,9 @@ describe('Testes de Validação de Curso', () => {
     const validacao = validarCurso(curso);
     expect(validacao).toBeFalsy();
   });
+});
 
-  test('Validação de Curso com nome e modalidade preenchidos', () => {
-    const curso = {
-      nome: 'Teste',
-      modalidade: 'Teste',
-    }
-
-    const validacao = validarCurso(curso);
-    expect(validacao).toBeTruthy();
-  });
-
+describe('Testes de Validação de Curso Com algum Campo Muito Longo', () => {
   test('Validação de Curso com nome muito longo', () => {
     const curso = {
       nome: 'Teste'.repeat(100),
@@ -110,4 +104,14 @@ describe('Testes de Validação de Curso', () => {
     const validacao = validarCurso(curso);
     expect(validacao).toBeFalsy();
   });
+});
+
+test('Validação de Curso com nome e modalidade preenchidos', () => {
+  const curso = {
+    nome: 'Teste',
+    modalidade: 'Teste',
+  }
+
+  const validacao = validarCurso(curso);
+  expect(validacao).toBeTruthy();
 });
