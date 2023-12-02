@@ -50,7 +50,7 @@ const Crachas = database.define('crachas', {
   }
 }, {});
 
-Crachas.belongsTo(Cursos, { foreignKey: 'id_curso' });
-Crachas.belongsTo(Usuarios, { foreignKey: 'id_usuario' });
+Crachas.belongsTo(Cursos, { foreignKey: 'id_curso', constraints: false });
+Crachas.belongsTo(Usuarios, { foreignKey: 'id_usuario', constraints: false });
 
 module.exports = Crachas;
