@@ -12,6 +12,9 @@
   Notas:
 */
 
+const dataUriRegex = /^data:image\/\w+;base64,/;
+const isDataUri = (dataUri) => dataUriRegex.test(dataUri);
+
 const validarUsuario = (usuario) => {
   if (!usuario.nome || !usuario.email || !usuario.senha) return false;
 
@@ -31,4 +34,18 @@ const validarCurso = (curso) => {
   return true;
 }
 
-module.exports = { validarUsuario, validarCurso };
+const validarCracha = (cracha) => {
+  if (!cracha.nome || !cracha.matricula || !cracha.foto || !cracha.imagem || !cracha.idCurso || !cracha.idUsuario) return false;
+
+  if (cracha.nome.length > 45 || cracha.matricula.length != 11) return false;
+
+  if (!isDataUri(cracha.foto) || !isDataUri(cracha.imagem)) return false;
+
+  if (!/^\d+$/.test(cracha.matricula)) return false;
+
+  if (!Number.isInteger(cracha.idCurso) || !Number.isInteger(cracha.idUsuario)) return false;
+
+  return true;
+}
+
+module.exports = { validarUsuario, validarCurso, validarCracha };

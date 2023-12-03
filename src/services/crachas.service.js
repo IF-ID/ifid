@@ -13,27 +13,25 @@
 */
 
 const Crachas = require('../models/crachas.model');
+const { validarCracha } = require('../utils/validarDados.util');
 
-const criarCracha = async (data) => {
-  const { nome, matricula, foto, imagem, id_usuario, id_curso } = data;
+const criarCracha = async (cracha) => {
+  if (!validarCracha(cracha)) return false;
 
-  let cracha
+  console.log(cracha);
 
-  try {
-    cracha = await Crachas.create({
-      nome_cracha: nome.toLowerCase().trim(),
-      matricula_cracha: matricula,
-      foto_cracha: foto,
-      imagem_cracha: imagem,
-      id_usuario: id_usuario,
-      id_curso: id_curso,
-    });
-  } catch (error) {
-    console.error(error);
-    return false;
-  }
+  cracha.nome = cracha.nome.toLowerCase().trim();
 
-  return cracha.dataValues.id_cracha;
+  crachaCriado = await Crachas.create({
+    nome_cracha: cracha.nome,
+    matricula_cracha: cracha.matricula,
+    foto_cracha: cracha.foto,
+    imagem_cracha: cracha.imagem,
+    id_usuario: cracha.idUsuario,
+    id_curso: cracha.idCurso,
+  });
+
+  return crachaCriado ? crachaCriado.dataValues.id_cracha : false ;
 }
 
 const mostrarCrachas = async () => {
