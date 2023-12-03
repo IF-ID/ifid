@@ -57,6 +57,31 @@ const verificarLogado = async (idUsuario) => {
   return logado ? true : false;
 }
 
+const getUsuario = async (idUsuario) => {
+  const usuario = await Usuarios.findOne({ where: { id_usuario: idUsuario } });
+
+  return usuario ? usuario.dataValues : false;
+}
+
+const modificarUsuario = async (novoUsuario) => {
+  if (!validarUsuario(novoUsuario)) return false;
+
+  novoUsuario.nome = novoUsuario.nome.toLowerCase().trim();
+  novoUsuario.email = novoUsuario.email.toLowerCase().trim();
+
+  const usuario = await Usuarios.findOne({ where: { id_usuario: novoUsuario.id } });
+
+  if (!usuario) return false;
+
+  const usuarioAtualizado = await Usuarios.update({
+    nome_usuario: novoUsuario.nome,
+    email_usuario: novoUsuario.email,
+    senha_usuario: novoUsuario.senha
+  }, { where: { id_usuario: novoUsuario.id } });
+
+  return usuarioAtualizado ? true : false;
+}
+
 const deletarUsuario = async (idUsuario) => {
   const usuario = await Usuarios.findOne({ where: { id_usuario: idUsuario } });
 
@@ -67,4 +92,4 @@ const deletarUsuario = async (idUsuario) => {
   return true;
 }
 
-module.exports = { criarUsuario, login, verificarLogado, deletarUsuario }
+module.exports = { criarUsuario, login, verificarLogado, getUsuario, modificarUsuario, deletarUsuario }
