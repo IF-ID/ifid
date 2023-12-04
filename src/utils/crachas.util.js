@@ -30,7 +30,6 @@ const gerarHtml = (aluno) => {
     .replace('{{foto}}', foto ?? options.imagePlaceholder);
 }
 
-/* Essa Função  */
 const criarCrachas = async (alunos) => {
   const browser = await puppeteer.launch({ headless: 'new' });
   const page = await browser.newPage();
@@ -45,7 +44,7 @@ const criarCrachas = async (alunos) => {
   for (const aluno of alunos) {
     let html = gerarHtml(aluno);
     await page.setContent(html);
-    let image = await page.screenshot({ encoding: 'base64' });const { test } = require('@jest/globals');
+    let image = await page.screenshot({ encoding: 'base64' });
     crachas.push(`data:image/jpeg;base64,${image}`);
   }
 
