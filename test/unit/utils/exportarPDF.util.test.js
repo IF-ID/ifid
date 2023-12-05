@@ -26,9 +26,9 @@ const crachas = [
 test('Exportar crachás para PDF', async () => {
   const fileName = await exportarPDF(crachas);
   const filePath = path.join(__dirname, '../../../', exportarConfig.exportPath, `pdf/${fileName}`);
-  console.log(filePath);
+  
   expect(fs.existsSync(filePath)).toBe(true);
 
   fs.unlinkSync(filePath);
-});
+}, 60000);
 

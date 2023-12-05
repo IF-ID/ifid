@@ -56,6 +56,11 @@ gerarHtml = (crachas) => {
 
 const exportarPDF = async (crachas) => {
   options.path = gerarPath('crachas');
+  const diretorios = path.dirname(options.path);
+
+  if (!fs.existsSync(diretorios)){
+    fs.mkdirSync(diretorios, { recursive: true });
+  }
 
   const html = gerarHtml(crachas);
     

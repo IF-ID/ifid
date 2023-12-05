@@ -18,7 +18,6 @@ const { describe, test } = require('@jest/globals');
 const Usuarios = require('../../../src/services/usuarios.service.js');
 const Cursos = require('../../../src/services/cursos.service.js');
 const Crachas = require('../../../src/services/crachas.service.js');
-const crachas = require('../../../src/utils/crachas.util.js');
 
 const dataUsuario = {
   nome: 'Murilo Henrique Conde da Luz',
