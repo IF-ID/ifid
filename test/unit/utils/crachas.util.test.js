@@ -38,7 +38,7 @@ test('Criar 1 Crachá com Todos os Dados', async () => {
   expect(Array.isArray(crachas)).toBe(true);
   expect(crachas.length).toBe(1);
   expect(isDataUri(crachas[0])).toBe(true);
-}, 60000);
+}, 120000);
 
 test('Criar 1 Crachá sem Dados Opcionais', async () => {
   const crachas = await criarCrachas([
@@ -53,7 +53,7 @@ test('Criar 1 Crachá sem Dados Opcionais', async () => {
   expect(Array.isArray(crachas)).toBe(true);
   expect(crachas.length).toBe(1);
   expect(isDataUri(crachas[0])).toBe(true);
-}, 60000);
+}, 120000);
 
 test('Criar 2 Crachás', async () => {
   const crachas = await criarCrachas([

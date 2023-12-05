@@ -16,6 +16,7 @@ const puppeteer = require('puppeteer');
 const exportOptions = require('../configs/exportar.config');
 const path = require('path');
 const fs = require('fs');
+const JSZip = require('jszip');
 
 const options = {
   format: 'A4',
@@ -28,12 +29,12 @@ const options = {
   }
 };
 
-const gerarPath = (nome) => {
+const gerarPath = (nome, extensao, diretorio) => {
   let id = 0;
   let filePath;
 
   while (true) {
-    filePath = path.join(__dirname, '../../', exportOptions.exportPath, 'pdf/', `${nome}${id}.pdf`);
+    filePath = path.join(__dirname, '../../', exportOptions.exportPath, `${diretorio}/`, `${nome}${id}.${extensao}`);
     
     if (!fs.existsSync(filePath)) break;
     id++;
@@ -55,7 +56,7 @@ gerarHtml = (crachas) => {
 } 
 
 const exportarPDF = async (crachas) => {
-  options.path = gerarPath('crachas');
+  options.path = gerarPath('crachas', 'pdf', 'pdf');
   const diretorios = path.dirname(options.path);
 
   if (!fs.existsSync(diretorios)){
@@ -73,4 +74,36 @@ const exportarPDF = async (crachas) => {
   return path.basename(options.path);
 };
 
-module.exports = { exportarPDF };
+const exportar1Jpg = async (dataURI) => {
+  const filePath = gerarPath('crachas', 'jpg', 'jpg');
+  const diretorios = path.dirname(filePath);
+  if (!fs.existsSync(diretorios)){
+    fs.mkdirSync(diretorios, { recursive: true });
+  }
+  fs.writeFileSync(filePath, Buffer.from(dataURI.split(',')[1], 'base64'));
+  return filePath;
+}
+
+const exportarJPG = async (crachas) => {
+  if (crachas.length === 1) {
+    return path.basename(await exportar1Jpg(crachas[0]));
+  }
+
+  const filePath = gerarPath('crachas', 'zip', 'jpg');
+  const diretorios = path.dirname(filePath);
+  if (!fs.existsSync(diretorios)){
+    fs.mkdirSync(diretorios, { recursive: true });
+  }
+
+  const zip = new JSZip();
+
+  for (let [i, dataURI] of crachas.entries()) {
+    zip.file(`cracha${i}.jpg`, Buffer.from(dataURI.split(',')[1], 'base64'));
+  }
+
+  const content = await zip.generateAsync({ type: 'nodebuffer' });
+  fs.writeFileSync(filePath, content); 
+  return path.basename(filePath);
+}
+
+module.exports = { exportarPDF, exportarJPG };

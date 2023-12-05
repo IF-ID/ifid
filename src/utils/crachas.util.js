@@ -53,7 +53,4 @@ const criarCrachas = async (alunos) => {
   return crachas;
 }
 
-module.exports = {
-  gerarHtml,
-  criarCrachas
-};
+module.exports = { gerarHtml, criarCrachas };

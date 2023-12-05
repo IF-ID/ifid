@@ -11,7 +11,7 @@
 
   Notas:
 */
-
+require('dotenv').config({ path: './src/configs/.env' });
 const Cursos = require('../models/cursos.model.js');
 const { validarCurso } = require('../utils/validarDados.util.js');
 
@@ -36,7 +36,28 @@ const criarCurso = async (curso) => {
 const getCurso = async (idCurso) => {
   const curso = await Cursos.findOne({ where: { id_curso: idCurso } });
 
-  return curso;
+  return curso ? curso.dataValues : false;
+}
+
+const getAllCursos = async () => {
+  const cursos = await Cursos.findAll();
+
+  return cursos.map(curso => curso.dataValues);
+}
+
+const getModalidades = async () => {
+  const modalidades = await Cursos.findAll({
+    attributes: ['modalidade_curso'],
+    group: ['modalidade_curso']
+  });
+
+  return modalidades.map(curso => curso.modalidade_curso);
+}
+
+const getCursosByModalidade = async (modalidade) => {
+  const cursos = await Cursos.findAll({ where: { modalidade_curso: modalidade } });
+
+  return cursos.map(curso => curso.dataValues);
 }
 
 const deletarCurso = async (idCurso) => {
@@ -49,5 +70,4 @@ const deletarCurso = async (idCurso) => {
   return true;
 }
 
-
-module.exports = { criarCurso, getCurso, deletarCurso };
+module.exports = { criarCurso, getCurso, getAllCursos, getModalidades, getCursosByModalidade, deletarCurso };

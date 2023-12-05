@@ -12,7 +12,7 @@
   Notas:
 */
 
-require('dotenv').config({ path: './src/configs/.env' });
+
 
 const { describe, test } = require('@jest/globals');
 const Cursos = require('../../../src/services/cursos.service.js');
@@ -147,6 +147,28 @@ describe('Testes de Busca de Curso', () => {
   test('Busca de Curso Inexistente', async () => {
     const cursoBuscado = await Cursos.getCurso(0);
     expect(cursoBuscado).toBeFalsy();
+  });
+});
+
+describe('Testes de Busca de Cursos', () => {
+  test('Busca de Todos os Cursos', async () => {
+    const cursos = await Cursos.getAllCursos();
+    expect(cursos).toBeDefined();
+    expect(Array.isArray(cursos)).toBeTruthy();
+  });
+
+  test('Busca de Modalidades', async () => {
+    const modalidades = await Cursos.getModalidades();
+    expect(modalidades).toBeDefined();
+    expect(Array.isArray(modalidades)).toBeTruthy();
+  });
+
+  test('Busca de Cursos por Modalidade', async () => {
+    const modalidade = (await Cursos.getModalidades())[0];
+    const cursos = await Cursos.getCursosByModalidade(modalidade);
+    expect(cursos).toBeDefined();
+    expect(Array.isArray(cursos)).toBeTruthy();
+    expect(cursos.every(curso => curso.modalidade_curso === modalidade)).toBeTruthy();
   });
 });
 
