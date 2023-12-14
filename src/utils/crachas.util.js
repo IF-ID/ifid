@@ -14,6 +14,7 @@
 */
 
 const options = require('../configs/crachas.config');
+const Barc = require('barcode-generator');
 const puppeteer = require('puppeteer');
 const fs = require('fs');
 
@@ -26,7 +27,7 @@ const gerarHtml = (aluno) => {
     .replace('{{matricula}}', matricula)
     .replace('{{modalidade}}', modalidade)
     .replace('{{curso}}', curso)
-    .replace('{{barcode}}', `https://barcode.orcascan.com/?type=code128&data=${matricula}`)
+    .replace('{{barcode}}', matricula)
     .replace('{{foto}}', foto ?? options.imagePlaceholder);
 }
 
@@ -34,8 +35,8 @@ const criarCrachas = async (alunos) => {
   const browser = await puppeteer.launch({ headless: 'new' });
   const page = await browser.newPage();
   await page.setViewport({
-    width: 265,
-    height: 378,
+    width: 530,
+    height: 756,
     deviceScaleFactor: 1,
   });
   

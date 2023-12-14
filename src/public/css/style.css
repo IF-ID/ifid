@@ -1,8 +1,43 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:wght@300&display=swap');
+
+:root {
+  --primary: #0A5517;
+
+  --text-body: #8F7F7F;
 }
 
-a {
-  color: #00B7FF;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+p {
+  color: var(--text-body);
+  text-align: justify;
+  font-family: "Inria Sans";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal; 
+}
+
+body {
+  min-height: 100vh;
+}
+
+nav, footer {
+  background-color: var(--primary);
+}
+
+.navbar-brand img {
+  height: 2em;
+}
+
+.btn-primary {
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+
+  font-family: "Inria Sans" !important;
+  font-size: 24px !important;
 }

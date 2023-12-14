@@ -16,7 +16,6 @@ require('dotenv').config({ path: './src/configs/.env' });
 
 const { describe, test } = require('@jest/globals');
 const Usuarios = require('../../../src/services/usuarios.service.js');
-const Cursos = require('../../../src/services/cursos.service.js');
 const Crachas = require('../../../src/services/crachas.service.js');
 
 const dataUsuario = {

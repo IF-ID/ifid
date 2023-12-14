@@ -8,6 +8,9 @@
     "example": "node ./examples/criarCracha.example.js"
   },
   "dependencies": {
+    "barc": "^0.0.4",
+    "barcode-generator": "^0.1.0",
+    "bootstrap": "^5.3.2",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "dotenv": "^16.3.1",

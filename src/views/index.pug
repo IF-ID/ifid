@@ -1,4 +1,23 @@
-extends templates/layout
+extends templates/layoutIndex
 
 block content
-  h1= title 
+  section.border-top.border-bottom
+    .container.py-4 Placeholder
+  section.border-bottom
+    .container.py-4
+      .row
+        .col-8
+          .d-flex.flex-column
+            p Qual nosso objetivo?
+            p A missão do IFID é aprimorar a praticidade para os estudantes do IFPA que dependem do crachá de identificação para ingressar na instituição e desempenhar suas atividades, aqui, você poderá criar, modificar e exportar o seu crachá institucional de maneira fácil, rápida e intuitiva!
+            p Nosso objetivo é disponibilizar o acesso ao crachá para atender às diversas necessidades de usuários em todos os anos de ensino, considerando diferentes perfis e exigências de recursos, seja para a criação individual ou para múltiplos usuários.
+            a.btn.btn-primary.rounded-3.align-self-center(href='https://github.com/IF-ID/Documentacao')
+              .px-4.py-1 Saiba mais
+
+        .col-4
+          .d-flex.flex-column.align-items-center.gap-2
+            p Acesse os sites da Instituição
+            a.row(href='https://belem.ifpa.edu.br/')
+              img.col.w-50(src='assets/images/ifpa.png', alt='Logo IFPA')
+            a.row(href='https://sigaa.ifpa.edu.br')
+              img.col.w-50(src='assets/images/sigaa.png', alt='Logo Sigaa')
