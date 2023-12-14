@@ -127,7 +127,7 @@ Tabela de conteúdos
     -npm start
 
 
-## Desenvolvimento
+## Desenvolvimento.
 
 > ### Esta seção descreve as ferramentas utilizadas diretamente no desenvolvimento da aplicação, mas não são necessárias para a utilização do projeto. São apenas recomendações para o ambiente de desenvolvimento.
 
