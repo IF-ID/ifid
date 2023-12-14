@@ -46,18 +46,18 @@
 ### [Documentação do IFID](https://github.com/IF-ID/Documentacao#ifid---criador-de-crach%C3%A1s-do-ifpa)
 
 
-## Autores
+## [Autores](#tabela-de-conteúdos)
 
 - [@liljmmiguel13](https://www.github.com/liljmmiguel13)
 - [@Rodrifer2004](https://www.github.com/Rodrifer2004)
 - [@nathil](https://www.github.com/nathil)
 - [@murilo-henrique060](https://www.github.com/murilo-henrique060)
 
-## Projeto
+## [Projeto](#tabela-de-conteúdos)
 
 > ### Esta seção descreve as Tecnologias utilizadas no projeto, além das informações sobre como Rodar, Requisitos de Hardware e Pré-Requisitos para o acesso ao projeto.
 
-## Tecnologias
+## [Tecnologias](#tabela-de-conteúdos)
 
 ### As técnicas utilizadas para alcançar os objetivos definidos nesta documentação são:
 
@@ -73,7 +73,7 @@
 - Jaws Mysql - Banco de dados.
 
 
-## Especificações de Hardware
+## [Especificações de Hardware](#tabela-de-conteúdos)
 
 
 ### Especificações para PC
@@ -97,7 +97,7 @@
 | Conexão com a Internet:       | Requer uma conexão com a Internet para executar a aplicação |
 
 
-## Pré Requisitos
+## [Pré Requisitos](#tabela-de-conteúdos)
 
 ### Os Pré-Requisitos utilizados para alcançar o uso eficiente e devido definidos nesta documentação são:
 
@@ -106,7 +106,7 @@
 - MySQL - Um sistema de gerenciamento de banco de dados, que utiliza a linguagem SQL como interface.
 
 
-## Rodando a Aplicação
+## [Rodando a Aplicação](#tabela-de-conteúdos)
 
 > #### Aqui você terá as instruções de como rodar a aplicação da maneira correta.
 
@@ -127,7 +127,7 @@
     -npm start
 
 
-## Desenvolvimento.
+## [Desenvolvimento](#tabela-de-conteúdos)
 
 > ### Esta seção descreve as ferramentas utilizadas diretamente no desenvolvimento da aplicação, mas não são necessárias para a utilização do projeto. São apenas recomendações para o ambiente de desenvolvimento.
 
@@ -144,7 +144,7 @@
 - Figma - Prototipação do projeto.
 
 
-## Funcionalidades
+## [Funcionalidades](#tabela-de-conteúdos)
 
 > ### As funcionalidades derivam de nosso estudo com as Proto Personas indicadas em nossa documentação, não necessariamente representam as funcionalidades totais que serão implementadas, mas servem como guia e base para nossos esforços.
 
