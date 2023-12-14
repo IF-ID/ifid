@@ -33,7 +33,7 @@
    * [Autores](#Autores)
    * [Projeto](#Projeto)
       * [Tecnologias](#Tecnologias)
-      * [Requisitos de Hardware](#Requisitos-de-Hardware)
+      * [Requisitos de Hardware](#Especificações-de-Hardware)
       * [Pré Requisitos](#Pré-Requisitos)
       * [Rodando a Aplicação](#Rodando-a-Aplicação)
    * [Desenvolvimento](#Desenvolvimento)
