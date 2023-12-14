@@ -150,16 +150,11 @@ Tabela de conteúdos
 
 ### As funcionalidades de nosso Projeto são:
 
-- Acessar o site pelo celular e pelo computador, além da opção de um aplicativo android;
+- Acessar o site pelo celular e pelo computador;
 - Possibilitar ao usuário fazer o login para salvar os crachás;
 - Se o usuário estiver logado, ele pode gerenciar os seus crachás (criar, ver, modificar, deletar);
 - Se o usuário estiver logado ele visualiza o crachá mais recente na tela inicial.
 - Criar múltiplos crachás ao mesmo tempo;
 - Possibilitar que o usuário exporte os seus crachás de forma individual ou em grupo, para pdf ou em png;
 - Página minimalista para facilitar o processo de criação dos crachás;
-- Possibilidade de acessar o site pelo computador.
 - Criar crachá sem fazer login.
-- Exportar o crachá em PDF no tamanho correto para impressão.
-- Possibilidade de fazer o download do crachá como PNG.
-- Acesso rápido ao crachá, abrindo-o assim que o usuário entra no aplicativo.
-- Possibilidade de compartilhar crachás como PNG pelo whatsapp.
