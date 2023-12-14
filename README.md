@@ -26,7 +26,7 @@
 
 
 
-Tabela de conteúdos
+# Tabela de conteúdos
 =================
 <!--ts-->
    * [Documentação](#Documentação)
@@ -41,7 +41,7 @@ Tabela de conteúdos
 <!--te-->
 
 
-## Documentação
+## [Documentação](#tabela-de-conteúdos)
 
 ### [Documentação do IFID](https://github.com/IF-ID/Documentacao#ifid---criador-de-crach%C3%A1s-do-ifpa)
 
