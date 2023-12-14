@@ -112,7 +112,7 @@
 
 ### Rodando Localmente
 
-- Certifique-se que as dependências estão instaladas
+- Certifique-se que os pré requisitos estão instalados
 - Clone o projeto
 - bash
     - git clone <link-do projeto>
