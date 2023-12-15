@@ -137,7 +137,7 @@ mysql --version
 
 É um sistema de controle de versão. Ele é responsável por gerenciar as versões do projeto, sendo responsável por clonar o projeto.
 
-Para verificar se o Git/Github, use este comando no CMD:
+Para verificar se o Git está instalado, use este comando no CMD:
 
 ```bash
 git --version
