@@ -103,10 +103,45 @@
 
 ### Os Pré-Requisitos utilizados para alcançar o uso eficiente e devido definidos nesta documentação são:
 
-- Node.js - Pré-Requisito necessário para a utilização do javascript no backend;
-- Node Package Manager (NPM) - Gerenciador de pacotes e configuração do projeto;
-- MySQL - Um sistema de gerenciamento de banco de dados, que utiliza a linguagem SQL como interface.
-- Git - 
+#### Node.js
+  
+Pré-Requisito necessário para a utilização do javascript no backend;
+
+Para verificar se o Node.js está instalado, use este comando no CMD:
+
+```bash
+node -v
+```
+
+### Node Package Manager (NPM)
+
+Gerenciador de pacotes e configuração do projeto;
+
+Para verificar se o Node Package Manager está instalado, use este comando no CMD:
+
+```bash
+npm -v
+```
+
+### MySQL
+
+Um sistema de gerenciamento de banco de dados, que utiliza a linguagem SQL como interface.
+
+Para verificar se o MySQL está instalado, use este comando no CMD:
+
+```bash
+mysql --version
+```
+
+### Git
+
+É um sistema de controle de versão. Ele é responsável por gerenciar as versões do projeto, sendo responsável por clonar o projeto.
+
+Para verificar se o Git/Github, use este comando no CMD:
+
+```bash
+git --version
+```
 
 
 ## [Rodando a Aplicação](#tabela-de-conteúdos)
