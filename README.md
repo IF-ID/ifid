@@ -152,18 +152,35 @@ git --version
 
 - Certifique-se que os pré requisitos estão instalados
 - Clone o projeto
-- bash
-    - git clone <link-do projeto>
+```bash
+    git clone https://github.com/IF-ID/ifid.git
+```
 - Vá para o diretório do projeto
-- bash
-    - cd <nome-do-diretorio>
+```bash
+    cd ifid
+```
+- Abra o arquivo que está em /ifid/src/configs/.env
+- Configure as variáveis de ambiente
+```env
+    DB_HOST="<host-do-banco-de-dados>"
+    DB_PORT="<porta-do-banco-de-dados>"
+    DB_USER="<usuario-do-banco-de-dados>"
+    DB_PASSWORD="<senha-do-banco-de-dados>"
+    DB_NAME="<nome-do-schema>"
+    PORT="<porta>" # Porta onde o site será executado
+```
 - Instalar as dependências do projeto
-- bash
-    -npm install
+```bash
+    npm install
+```
+- Crie as tabelas no banco de dados
+```bash
+    npm run migration
+```
 - Inicie o servidor
-- bash
-    -npm start
-
+```bash
+    npm start
+```
 
 ## [Desenvolvimento](#tabela-de-conteúdos)
 
