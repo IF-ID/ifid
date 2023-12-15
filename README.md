@@ -106,6 +106,7 @@
 - Node.js - Pré-Requisito necessário para a utilização do javascript no backend;
 - Node Package Manager (NPM) - Gerenciador de pacotes e configuração do projeto;
 - MySQL - Um sistema de gerenciamento de banco de dados, que utiliza a linguagem SQL como interface.
+- Git - 
 
 
 ## [Rodando a Aplicação](#tabela-de-conteúdos)
