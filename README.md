@@ -59,7 +59,7 @@ www.ifid.com.br
 
 ## [Projeto](#tabela-de-conteúdos)
 
-> ### Esta seção descreve as Tecnologias utilizadas no projeto, além das informações sobre como Rodar, Requisitos de Hardware e Pré-Requisitos para o acesso ao projeto.
+> ### Esta seção descreve as Tecnologias utilizadas no projeto, além das informações sobre como Rodar, Requisitos de Hardware, Pré-Requisitos para o acesso ao projeto e as funcionalidades nele implementadas.
 
 ## [Tecnologias](#tabela-de-conteúdos)
 
