@@ -2,11 +2,29 @@ extends templates/layoutIndex
 
 block content
   section.border-top.border-bottom
-    .container.py-4 Placeholder
+    .container.py-5
+      .row.row-gap-5
+        .col-lg.order-2.order-lg-1.d-flex.flex-column.align-items-center.gap-2
+          p Antigas Criações
+
+        .col-lg-3.order-3.order-lg-2.d-flex.flex-column.justify-content-center.px-5.row-gap-2
+          button.btn.btn-primary.rounded-3
+            .px-4.py-1 Deletar
+
+          button.btn.btn-primary.rounded-3
+            .px-4.py-1 Exportar
+
+          button.btn.btn-primary.rounded-3
+            .px-4.py-1 Modificar
+
+        .col-lg.order-1.order-lg-3.d-flex.flex-column.align-items-center.gap-2
+          p Visualizar
+          img#crachaPreview.border(src='', alt='Crachá de identificação')
+
   section.border-bottom
     .container.py-4
-      .row
-        .col-8
+      .row.row-gap-5
+        .col-lg-8
           .d-flex.flex-column
             p Qual nosso objetivo?
             p A missão do IFID é aprimorar a praticidade para os estudantes do IFPA que dependem do crachá de identificação para ingressar na instituição e desempenhar suas atividades, aqui, você poderá criar, modificar e exportar o seu crachá institucional de maneira fácil, rápida e intuitiva!
@@ -14,10 +32,10 @@ block content
             a.btn.btn-primary.rounded-3.align-self-center(href='https://github.com/IF-ID/Documentacao')
               .px-4.py-1 Saiba mais
 
-        .col-4
+        .col-lg-4
           .d-flex.flex-column.align-items-center.gap-2
             p Acesse os sites da Instituição
-            a.row(href='https://belem.ifpa.edu.br/')
-              img.col.w-50(src='assets/images/ifpa.png', alt='Logo IFPA')
-            a.row(href='https://sigaa.ifpa.edu.br')
-              img.col.w-50(src='assets/images/sigaa.png', alt='Logo Sigaa')
+            a.w-50(href='https://belem.ifpa.edu.br/')
+              img.w-100(src='assets/images/ifpa.png', alt='Logo IFPA')
+            a.w-50(href='https://sigaa.ifpa.edu.br')
+              img.w-100(src='assets/images/sigaa.png', alt='Logo Sigaa')
