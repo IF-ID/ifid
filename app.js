@@ -19,6 +19,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '/src/public')));
 
 app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css')); // redirect CSS bootstrap
+app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/js')); // redirect JS bootstrap
+app.use('/js', express.static(__dirname + '/node_modules/jquery/dist')); // redirect JS jQuery
 
 app.use('/', indexRouter);
 

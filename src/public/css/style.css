@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inria+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:wght@700&display=swap');
 
 :root {
   --primary: #0A5517;
@@ -12,7 +13,11 @@
   box-sizing: border-box;
 }
 
-p {
+body {
+  min-height: 100vh;
+}
+
+p, .card-link {
   color: var(--text-body);
   text-align: justify;
   font-family: "Inria Sans";
@@ -21,6 +26,7 @@ p {
   font-weight: 300;
   line-height: normal; 
 }
+
 
 #listaCracha {
   max-height: 18em;
@@ -38,6 +44,7 @@ p {
     max-height: 25em;
   }
 }
+
 
 #listaCracha * {
   color: var(--text-body);
@@ -57,25 +64,6 @@ p {
   border-color: var(--primary);
 }
 
-body {
-  min-height: 100vh;
-}
-
-nav, footer {
-  background-color: var(--primary);
-}
-
-.navbar-brand img {
-  height: 2em;
-}
-
-.btn-primary {
-  background-color: var(--primary) !important;
-  border-color: var(--primary) !important;
-
-  font-family: "Inria Sans" !important;
-  font-size: 20px !important;
-}
 
 #crachaPreview {
   width: 60%;
@@ -89,3 +77,38 @@ nav, footer {
 }
 
 
+nav, footer {
+  background-color: var(--primary);
+}
+
+.navbar-brand img {
+  height: 2em;
+}
+
+
+.btn-primary {
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+
+  font-family: "Inria Sans" !important;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+}
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.card-title {
+  color: var(--text-body) !important;
+  font-family: "Inria Sans";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+}

@@ -1,10 +1,4 @@
 doctype html
-html(lang="en")
-  head
-    
-    title Document
-  body 
-doctype html
 html(lang='pt-br')
   head
     meta(charset="UTF-8")
@@ -15,9 +9,15 @@ html(lang='pt-br')
 
     title= title
   body.d-flex.flex-column
+    block templates
+
     include ../components/header
 
     main.d-flex.flex-column.flex-grow-1
       block content
 
     include ../components/footer
+
+    script(src='/js/bootstrap.min.js')
+    script(src='/js/jquery.min.js')
+    script(src='/js/script.js')
