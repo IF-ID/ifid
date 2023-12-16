@@ -17,24 +17,13 @@ require('dotenv').config({ path: './src/configs/.env' });
 const { test } = require('@jest/globals');
 const Crachas = require('../../../src/models/crachas.model.js');
 
-test('Sincronização da Tabela de Crachás', async () => {
-  let result = await Crachas.sync({ alter: true });
-}, 30000);
-
 test('Modelo da Tabela de Crachas', async () => {
   let table;
   
   try {
     table = await Crachas.describe();
   } catch (error) {
-    if (process.env.CREATE_TABLES == 'true') {
-      console.log('Criando tabela de crachás...');
-      await Crachas.sync({ alter: true });
-      table = await Crachas.describe();
-    } else {
-      console.log('Tabela de cursos não existe. Ative a opção CREATE_TABLES no arquivo .env para criar a tabela.');
-      throw error;
-    }
+    console.log('Tabela de cursos não existe.');
   }
 
   expect(table).toHaveProperty('id_cracha');

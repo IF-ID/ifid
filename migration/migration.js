@@ -1,21 +1,8 @@
-/*
-  cursos.model.test.js
+require('dotenv').config({path: './src/configs/.env'});
 
-  Esse arquivo testa o modelo da tabela de cursos do banco de dados.
-
-  Requisito:
-
-  Último Editor: Murilo
-
-  Status: Finalizado
-
-  Notas:
-*/
-
-require('dotenv').config({ path: './src/configs/.env' });
-
-const { describe, test } = require('@jest/globals');
-const Cursos = require('../../../src/models/cursos.model.js');
+const Crachas = require('../src/models/crachas.model.js');
+const Cursos = require('../src/models/cursos.model.js');
+const Usuarios = require('../src/models/usuarios.model.js');
 
 const cursos = [
   { nome_curso: 'técnico em agente comunitário de saúde', modalidade_curso: 'técnico' },
@@ -59,41 +46,30 @@ const cursos = [
   { nome_curso: 'tecnologia em sistemas de telecomunicações', modalidade_curso: 'graduação' }
 ];
 
-describe('Testes do Modelo da Tabela de Cursos', () => {
-  test('Modelo da Tabela de Cursos', async () => {
-    let table;
+const migration = async () => {
+  try {
+    console.log('Iniciando migração...');
 
-    try {
-      table = await Cursos.describe();
-    } catch (error) {
-      throw error;
-    } 
+    console.log('Criando tabela de usuário...');
+    await Usuarios.sync({ force: true });
+    console.log('Tabela de usuário criada.');
 
-    expect(table).toHaveProperty('id_curso');
-    expect(table).toHaveProperty('nome_curso');
-    expect(table).toHaveProperty('modalidade_curso');
-  });
+    console.log('Criando tabela de cursos...');
+    await Cursos.sync({ force: true });
+    console.log('Tabela de cursos criada.');
 
+    console.log('Criando cursos...');
+    await Cursos.bulkCreate(cursos);
+    console.log('Cursos criados.');
 
-  test('Verificar a Existência dos Cursos Padrão', async () => {
-    let notCreated = [];
+    console.log('Criando tabela de crachás...');
+    await Crachas.sync({ force: true });
+    console.log('Tabela de crachás criada.');
 
-    let cursosQuery = await Cursos.findAll();
+    console.log('Migração finalizada.');
+  } catch (error) {
+    console.log(error);
+  }
+};
 
-    cursos.forEach(curso => {
-      for (c of cursosQuery) {
-        if (curso.nome_curso == c.nome_curso) {
-          return
-        }
-      }
-      notCreated.push(curso);
-    })
-
-    if (notCreated.length > 0) {
-      console.log('Cursos não encontrados:');
-      console.log(notCreated);
-
-      throw new Error('Cursos não encontrados.');
-    }
-  });
-});
+migration();

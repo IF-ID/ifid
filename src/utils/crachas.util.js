@@ -14,7 +14,6 @@
 */
 
 const options = require('../configs/crachas.config');
-const Barc = require('barcode-generator');
 const puppeteer = require('puppeteer');
 const fs = require('fs');
 
