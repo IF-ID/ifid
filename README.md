@@ -4,8 +4,7 @@
 
 ![IFID ICON](https://lh3.googleusercontent.com/fife/AGXqzDnQVpchdzDlHc7ziNo4Dot1ajyQZTPbtiGvLzK9FnSSe7c-4dmeHRYqleDcs_R4eNIuv2uxkY7doFsBVQTTuWqo0Kc3EX_FWV3ioTRbFRx573SyA4kW3T9BCajz5VfYCYnyMijBX1OfoziWrwojihMZFv3ZkOjEUdxITCbQUhAKPtM5tuE3yz8zqI-Bgpz8qGiHb49hBSqzveMNHUu50iT1oPd_ByYNF2gKDVo50KHGLa7A5Vcuu5QPJsTkNBQi0GVubhU5G6tDB-xV5VQRa_5vJfa98vX_FU5pth90sN1Usl2ivr8-96fMw7milHw-_uV-103bdgFJZP1yLWXRJCngdFM_87Qjjq3UMQyH9XaIa3y5_DqNHtUPrL7F_LoXRNOayYxCJmZs295o4hpyDQAOgFofvxmzByKul-9BJusGOredo588KG0PLVhZgoKLrQtjxlHZwKXVP2hYO2UDlvoXndCHw-i5Wbduv4mrUpZJ5eRfz8wabfQUE10nOSIYbVOAO26aqIq8tDmhSYmT6OxlDVV2up_uv1ylhja3gPTaCrIvXJyYSnxO4X9p-paHAaNWfH93gYkiE5jHnWtBtYq7Wdh-fPamqdK07rcJmWypToSos_VJh2qZo3LUpF0JdkT3AqXW_bKPUVN0pg8hjRVZa70sUMl-_MfRUgTtXPzf7i6jSDj4c3dhg3SK-2q01EiNnIk9Up9KqwfaGQz9EzC5T3Lmpy-QOSbvCpEhp4xmdQlzl5f5RvN-aGD5IntSjul6BLh1fZfLFcUtjeAB8XRlmbMF4uqUiOEQXEhb553rPU6XFWfCe7xB3Xx5pqFeZ4PGki6wpuZb9Zw1C8_26DBRNahAvvmxfu5xPxphY8IYe0yrXipCgBMMRHRd-fhkG9V97X0DWvfMBQz8EctOz-ZAZeJDXmlvi0x75TnAHvMS3ZunY_3ip0Tyv-ykgs8wjN-F-JxM2R50v-WTMUavth6obhKKXL1I3rgRfcJIzUjYORj2Bd1qe_uTU1PPzGc0KTv7Ikh1kbYzSOj8Ucj-zRbRTsQ1LecLPJOjf5clPzOMW9c0sJKTfGUVzrZ_K5dGfLwY-M6uVg6D-N1v7L8ikCJc4K_PTwKE54wJGfUKz-yqrOofwRVZb_I0-bA5hikXMyYWzRtPmqTyHPjYmQaxgBn2IxJXaZ6wTmvfwKaABpLWbwCDQIMhobw4Sf1qzrKBClWETmbF9E2Yz533rwi8kPer-Rmx0Ydvg3DwEc7_3SkPSVGe-91kktWBC5en_UxHIbxtasjXoCLG_ALbpFFKCxWs_EKcFEZIR9ilRWVh1I4CK4QWkiA-g_KDnKR9Itw7US76qfgOyf5ITbYbc5Wf0mW_NEME3I4XrVepkaTYLZOSfHHVeDLoNRJufmfFhE758h82USm3LuCrOCR53BNEUex2zCBfsrAFb3GZIldaOItxuN1BEpbJJjBjJMFxrZswiVQr46W5fGyksxdADIjXciZke2yHXDTP_v7lSXS1JQq68R_zdl-877YnVJMDs-PH=w1920-h953)
 
-### O IFID é um projeto de teor independente com o objetivo de disponibilizar uma ferramenta online para criação e gerenciamento de crachás de identificação do IFPA Campus Belém partindo da matrícula do estudante.
-
+### O IFID é um projeto de teor independente com o objetivo de disponibilizar uma ferramenta online para criação e gerenciamento de crachás de identificação do IFPA Campus Belém.
 
 # TAGs
 
@@ -27,6 +26,9 @@
 ![Diagrams.net](https://img.shields.io/badge/diagrams.net-F08705.svg?style=for-the-badge&logo=diagramsdotnet&logoColor=white)
 ![Figma](https://img.shields.io/badge/Figma-F24E1E.svg?style=for-the-badge&logo=Figma&logoColor=white)
 
+# Hospedagem de Site
+
+www.ifid.com.br
 
 # Tabela de conteúdos
 =================
@@ -57,7 +59,7 @@
 
 ## [Projeto](#tabela-de-conteúdos)
 
-> ### Esta seção descreve as Tecnologias utilizadas no projeto, além das informações sobre como Rodar, Requisitos de Hardware e Pré-Requisitos para o acesso ao projeto.
+> ### Esta seção descreve as Tecnologias utilizadas no projeto, além das informações sobre como Rodar, Requisitos de Hardware, Pré-Requisitos para o acesso ao projeto e as funcionalidades nele implementadas.
 
 ## [Tecnologias](#tabela-de-conteúdos)
 
@@ -103,9 +105,45 @@
 
 ### Os Pré-Requisitos utilizados para alcançar o uso eficiente e devido definidos nesta documentação são:
 
-- Node.js - Pré-Requisito necessário para a utilização do javascript no backend;
-- Node Package Manager (NPM) - Gerenciador de pacotes e configuração do projeto;
-- MySQL - Um sistema de gerenciamento de banco de dados, que utiliza a linguagem SQL como interface.
+#### Node.js
+  
+Pré-Requisito necessário para a utilização do javascript no backend;
+
+Para verificar se o Node.js está instalado, use este comando no CMD:
+
+```bash
+node -v
+```
+
+### Node Package Manager (NPM)
+
+Gerenciador de pacotes e configuração do projeto;
+
+Para verificar se o Node Package Manager está instalado, use este comando no CMD:
+
+```bash
+npm -v
+```
+
+### MySQL
+
+Um sistema de gerenciamento de banco de dados, que utiliza a linguagem SQL como interface.
+
+Para verificar se o MySQL está instalado, use este comando no CMD:
+
+```bash
+mysql --version
+```
+
+### Git
+
+É um sistema de controle de versão. Ele é responsável por gerenciar as versões do projeto, sendo responsável por clonar o projeto.
+
+Para verificar se o Git está instalado, use este comando no CMD:
+
+```bash
+git --version
+```
 
 
 ## [Rodando a Aplicação](#tabela-de-conteúdos)
@@ -116,18 +154,35 @@
 
 - Certifique-se que os pré requisitos estão instalados
 - Clone o projeto
-- bash
-    - git clone <link-do projeto>
+```bash
+    git clone https://github.com/IF-ID/ifid.git
+```
 - Vá para o diretório do projeto
-- bash
-    - cd <nome-do-diretorio>
+```bash
+    cd ifid
+```
+- Abra o arquivo que está em /ifid/src/configs/.env
+- Configure as variáveis de ambiente
+```env
+    DB_HOST="<host-do-banco-de-dados>"
+    DB_PORT="<porta-do-banco-de-dados>"
+    DB_USER="<usuario-do-banco-de-dados>"
+    DB_PASSWORD="<senha-do-banco-de-dados>"
+    DB_NAME="<nome-do-schema>"
+    PORT="<porta>" # Porta onde o site será executado
+```
 - Instalar as dependências do projeto
-- bash
-    -npm install
+```bash
+    npm install
+```
+- Crie as tabelas no banco de dados
+```bash
+    npm run migration
+```
 - Inicie o servidor
-- bash
-    -npm start
-
+```bash
+    npm start
+```
 
 ## [Desenvolvimento](#tabela-de-conteúdos)
 
