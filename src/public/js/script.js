@@ -4,7 +4,10 @@ const showPopup = (templateId) => {
 }
 
 const hidePopup = () => {
-  $('#overlay').fadeOut();
+  const overlay = $('#overlay');
+  overlay.fadeOut(complete = () => {
+    overlay.remove();
+  });
 }
 
 $(() => {

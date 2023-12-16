@@ -3,6 +3,7 @@
 
 :root {
   --primary: #0A5517;
+  --input: #D9D9D9;
 
   --text-body: #8F7F7F;
 }
@@ -25,6 +26,28 @@ p, .card-link {
   font-style: normal;
   font-weight: 300;
   line-height: normal; 
+}
+
+h5 {
+  color: var(--text-body) !important;
+  text-align: justify !important;
+  font-family: "Inria Sans" !important;
+  font-size: 28px !important;
+  font-weight: 300 !important;
+}
+
+h6 {
+  color: var(--text-body) !important;
+  text-align: justify !important;
+  font-family: "Inria Sans" !important;
+  font-size: 22px !important;
+  font-weight: 300 !important;
+}
+
+
+.btn-close:focus {
+  border: var(--primary) !important;
+  box-shadow: 0 0 0 0.25rem rgba(10,85,23,.25) !important;
 }
 
 
@@ -54,9 +77,9 @@ p, .card-link {
   font-weight: 300;
 }
 
-#listaCracha input[type="checkbox"]:focus {
-  border: var(--primary);
-  box-shadow: 0 0 0 0.25rem rgba(10,85,23,.25);
+#listaCracha input[type="checkbox"]:focus, .form-control:focus {
+  border: var(--primary) !important;
+  box-shadow: 0 0 0 0.25rem rgba(10,85,23,.25) !important;
 }
 
 #listaCracha input[type="checkbox"]:checked {
@@ -85,14 +108,20 @@ nav, footer {
   height: 2em;
 }
 
+.btn {
+  font-family: "Inria Sans" !important;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+}
 
 .btn-primary {
   background-color: var(--primary) !important;
   border-color: var(--primary) !important;
+}
 
-  font-family: "Inria Sans" !important;
-  font-size: 20px !important;
-  font-weight: 700 !important;
+.btn-primary:focus {
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 0.25rem rgba(10,85,23,.25) !important;
 }
 
 #overlay {
@@ -100,6 +129,7 @@ nav, footer {
   top: 0;
   left: 0;
   z-index: 2;
+  overflow-y: auto;
   width: 100vw;
   height: 100vh;
   background-color: rgba(0,0,0,0.5);
@@ -111,4 +141,28 @@ nav, footer {
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
+}
+
+
+.form-control, ::placeholder {
+  font-family: "Inria Sans" !important;
+  font-size: 20px !important;
+  font-weight: 300 !important;
+
+  color: var(--text-body) !important;
+  background-color: var(--input) !important;
+}
+
+.form-select {
+  font-family: "Inria Sans" !important;
+  font-size: 20px !important;
+  font-weight: 300 !important;
+
+  color: var(--text-body) !important;
+  background-color: var(--input) !important;
+}
+
+.exportar-preview {
+  height: 15em !important;
+  aspect-ratio: 7/10 !important;
 }

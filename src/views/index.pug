@@ -2,6 +2,10 @@ extends templates/layoutIndex
 
 block templates
   include ./disclaimer
+  include ./criarCracha
+  include ./deletarCracha
+  include ./alterarCracha
+  include ./exportarCracha
 
 block content
   section.border-top.border-bottom
@@ -65,21 +69,21 @@ block content
                 input.form-check-input(type='checkbox' id='cracha3')
 
         .col-lg-3.order-3.order-lg-2.d-flex.flex-column.justify-content-center.px-5.row-gap-2
-          button.btn.btn-primary.rounded-3
-            .px-4.py-1 Criar Crachá
+          button.btn.btn-primary.rounded-3(onclick='showPopup("#criar-cracha-template")')
+            .px-4.py-1 Criar
 
-          button.btn.btn-primary.rounded-3
+          button.btn.btn-primary.rounded-3(onclick='showPopup("#deletar-cracha-template")')
             .px-4.py-1 Deletar
 
-          button.btn.btn-primary.rounded-3
+          button.btn.btn-primary.rounded-3(onclick='showPopup("#exportar-cracha-template")')
             .px-4.py-1 Exportar
 
-          button.btn.btn-primary.rounded-3
+          button.btn.btn-primary.rounded-3(onclick='showPopup("#alterar-cracha-template")')
             .px-4.py-1 Modificar
 
         .col-lg.order-1.order-lg-3.d-flex.flex-column.align-items-center.gap-2
           p Visualizar
-          img#crachaPreview.border(src='', alt='Crachá de identificação')
+          img#crachaPreview.border(src='assets/images/crachasPlaceholder.jpg', alt='Crachá de identificação')
 
   section.border-bottom
     .container.py-4
