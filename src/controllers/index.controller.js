@@ -9,4 +9,8 @@ const politicaDePrivacidade = (req, res) => {
     res.render('politicaDePrivacidade', { title: 'Política de Privacidade' });
 }
 
-module.exports = { index, politicaDePrivacidade };
+const termosDeUso = (req, res) => {
+    res.render('termosDeUso', { title: 'Termos de Uso' });
+}
+
+module.exports = { index, politicaDePrivacidade, termosDeUso };
