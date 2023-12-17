@@ -7,7 +7,8 @@
     "debug": "export DEBUG=ifid:* && npm start",
     "test": "jest --detectOpenHandles",
     "migration": "node ./migration/migration.js",
-    "example": "node ./examples/criarCracha.example.js"
+    "example": "node ./examples/criarCracha.example.js",
+    "heroku-postbuild": "mkdir ./.cache && mv /app/.cache/puppeteer ./.cache"
   },
   "dependencies": {
     "barc": "^0.0.4",
