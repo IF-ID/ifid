@@ -209,3 +209,10 @@ nav, footer {
   height: 15em !important;
   aspect-ratio: 7/10 !important;
 }
+
+@media (max-width: 991px) {
+  footer .col-lg, footer.col-lg-1 {
+    display: flex;
+    justify-content: center !important;
+  }
+}
