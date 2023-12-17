@@ -69,6 +69,35 @@ h6 {
 }
 
 
+form.card {
+  width: 100% !important;
+}
+
+form .form-control {
+  padding: 0.5em 0.5em !important;
+}
+
+form .form-select {
+  padding: 0.5em 0.5em !important;
+}
+
+@media (min-width: 992px) {
+  form.card {
+    width: 70% !important;
+  }
+}
+
+@media (min-width: 576px) {
+  form .form-control {
+    padding: 0.5em 1.5em !important;
+  }
+  
+  form .form-select {
+    padding: 0.5em 1.5em !important;
+  }
+}
+
+
 #listaCracha * {
   color: var(--text-body);
   font-family: "Inria Sans";
