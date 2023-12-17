@@ -4,7 +4,7 @@ template#criar-cracha-template
       .d-flex.flex-column.align-items-center.h-100
         form.card.rounded-5.p-5.w-75.my-auto
           .d-flex.flex-column.align-items-center.gap-3.position-relative
-            button.btn-close.position-absolute.top-0.end-0.fs-5.translate-middle(onclick='hidePopup()')
+            .btn-close.position-absolute.top-0.end-0.fs-5.translate-middle(onclick='hidePopup()')
             img.mb-3(src='assets/images/logo2.png', style='height: 5em;', alt='Logo')
             h5 Criando o Crachá
             .align-self-start
@@ -16,4 +16,4 @@ template#criar-cracha-template
             select.form-select.form-select-lg.px-5.py-3
               option(selected='', hidden='') Selecione o curso do aluno
 
-            button.btn.btn-primary.px-5.py-3 Criar
+            .btn.btn-primary.px-5.py-3 Criar
