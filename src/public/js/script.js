@@ -11,5 +11,7 @@ const hidePopup = () => {
 }
 
 $(() => {
-  showPopup('#aviso-template');
+  if (!sessionStorage.aviso) {
+    showPopup('#aviso-template');
+  }
 });
