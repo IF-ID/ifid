@@ -5,4 +5,8 @@ const index = async (req, res) => {
     res.render('index', { title: 'IFID', cursos });
 }
 
-module.exports = { index };
+const politicaDePrivacidade = (req, res) => {
+    res.render('politicaDePrivacidade', { title: 'Política de Privacidade' });
+}
+
+module.exports = { index, politicaDePrivacidade };
