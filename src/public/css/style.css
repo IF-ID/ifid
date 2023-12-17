@@ -106,7 +106,7 @@ form .form-select {
   font-weight: 300;
 }
 
-#listaCracha input[type="checkbox"]:focus, .form-control:focus {
+#listaCracha input[type="checkbox"]:focus, .form-control:focus, .form-select:focus {
   border: var(--primary) !important;
   box-shadow: 0 0 0 0.25rem rgba(10,85,23,.25) !important;
 }
@@ -190,6 +190,20 @@ nav, footer {
   color: var(--text-body) !important;
   background-color: var(--input) !important;
 }
+
+.form-select ::first-line {
+  text-transform: lowercase !important;
+}
+
+.form-select option {
+  font-family: "Inria Sans" !important;
+  font-size: 20px !important;
+  font-weight: 300 !important;
+
+  color: var(--text-body) !important;
+  background-color: var(--input) !important;
+}
+
 
 .exportar-preview {
   height: 15em !important;

@@ -4,7 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./src/routes/index');
+var indexRouter = require('./src/routes/index.route');
+var cardRouter = require('./src/routes/card.route');
 
 var app = express();
 
@@ -23,6 +24,7 @@ app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/js')); /
 app.use('/js', express.static(__dirname + '/node_modules/jquery/dist')); // redirect JS jQuery
 
 app.use('/', indexRouter);
+app.use('/gerarCracha', cardRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

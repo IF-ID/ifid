@@ -18,7 +18,7 @@ const puppeteer = require('puppeteer');
 const fs = require('fs');
 
 const gerarHtml = (aluno) => {
-  const { nome, matricula, modalidade, curso, foto } = aluno;
+  const { nome, matricula, modalidade, curso } = aluno;
   const crachaTemplate = fs.readFileSync(options.templatePath).toString();
 
   return crachaTemplate
@@ -27,7 +27,7 @@ const gerarHtml = (aluno) => {
     .replace('{{modalidade}}', modalidade)
     .replace('{{curso}}', curso)
     .replace('{{barcode}}', matricula)
-    .replace('{{foto}}', foto ?? options.imagePlaceholder);
+    .replace('{{foto}}', options.imagePlaceholder);
 }
 
 const criarCrachas = async (alunos) => {
