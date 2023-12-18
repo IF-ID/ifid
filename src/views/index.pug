@@ -20,16 +20,16 @@ block content
             ul.list-group.row-gap-1.px-4.rounded-4
               
         .col-lg-3.order-3.order-lg-2.d-flex.flex-column.justify-content-center.px-5.row-gap-2
-          button.btn.btn-primary.rounded-3(onclick='showPopup("#criar-cracha-template")')
+          button#criar-btn.btn.btn-primary.rounded-3(onclick='showPopup("#criar-cracha-template")')
             .px-4.py-1 Criar
 
-          button.btn.btn-primary.rounded-3(onclick='showPopup("#deletar-cracha-template")')
+          button#deletar-btn.btn.btn-primary.disabled.rounded-3(onclick='showPopup("#deletar-cracha-template")')
             .px-4.py-1 Deletar
 
-          button.btn.btn-primary.rounded-3(onclick='showPopup("#exportar-cracha-template")')
+          button#exportar-btn.btn.btn-primary.rounded-3(onclick='showPopup("#exportar-cracha-template")')
             .px-4.py-1 Exportar
 
-          button.btn.btn-primary.rounded-3(onclick='showPopup("#alterar-cracha-template")')
+          button#modificar-btn.btn.btn-primary.rounded-3(onclick='showPopup("#alterar-cracha-template")')
             .px-4.py-1 Modificar
 
         .col-lg.order-1.order-lg-3.d-flex.flex-column.align-items-center.gap-2
@@ -58,3 +58,4 @@ block content
 block scripts
   script(src='/js/validate.js') 
   script(src='/js/cards.js')
+  script(src='/js/select.js')

@@ -222,3 +222,7 @@ nav, footer {
     padding-bottom: 0 !important;
   }
 }
+
+li.selected {
+  border-color: var(--primary) !important;
+}
