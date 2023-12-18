@@ -9,6 +9,8 @@ const loadCards = () => {
       cards.set(card.id, card);
       maxId++;
     }
+
+    selectedSingle = maxId - 1;
   }
 
   showCards();
@@ -32,15 +34,11 @@ const showCards = () => {
   updatePreview();
 }
 
-const updatePreview = (id) => {
+const updatePreview = () => {
   const crachaPreview = $('#crachaPreview');
   
-  if (id === undefined) {
-    id = maxId - 1;
-  }
-
-  const card = cards.get(id);
-  crachaPreview.attr('src', card.image);
+  const image = selectedSingle >= 0 ? cards.get(selectedSingle).image : 'assets/images/crachasPlaceholder.jpg';
+  crachaPreview.attr('src', image);
 } 
 
 const generateCard = async (card) => {
@@ -59,8 +57,27 @@ const addCard = async (card, reload=true) => {
   card.id = maxId;
   card.image = await generateCard(card);
   cards.set(card.id, card);
+  selectSingle(card.id);
   maxId++;
 
   localStorage.setItem('cards', JSON.stringify(Array.from(cards.values())));
   if (reload) showCards();
+}
+
+const deleteCards = async () => {
+  const selected = getSelected();
+
+  for (const id of selected) {
+    cards.delete(id);
+  }
+
+  localStorage.setItem('cards', JSON.stringify(Array.from(cards.values())));
+
+  if (selected.has(selectedSingle)) {
+    selectedSingle = -1;
+  }
+  selectedMultiple.clear();
+  
+  updateSelected();
+  showCards();
 }

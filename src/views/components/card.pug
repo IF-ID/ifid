@@ -1,4 +1,4 @@
 template#card-template
-  li.list-group-item.d-flex.justify-content-between.align-items-center.border(onclick='updatePreview({{id}}); selectSingle({{id}})', data-id='{{id}}')
+  li.list-group-item.d-flex.justify-content-between.align-items-center.border(onclick='selectSingle({{id}})', data-id='{{id}}')
     span.text-capitalize {{nome}}
     input.form-check-input(type='checkbox', nome='checkbox-{{id}}', onchange='selectMultiple({{id}}, this.checked)')

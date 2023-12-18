@@ -19,6 +19,16 @@ const criarCard = async (card) => {
   hidePopup();
 }
 
+const deletarCards = async () => {
+  const loadingTemplate = $('#loading-template').html();
+  const loading = loadingTemplate.replace('{{mensagem}}', 'Deletando Crachás...');
+  $('.submit').html(loading);
+  $('.btn-close').addClass('disabled');
+  $('#cancel-delete-btn').addClass('disabled');
+  await deleteCards();
+  hidePopup();
+}
+
 $(() => {
   if (!sessionStorage.aviso) {
     showPopup('#aviso-template');

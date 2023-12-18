@@ -8,8 +8,8 @@ template#deletar-cracha-template
             img.mb-3(src='assets/images/logo2.png', style='height: 5em;', alt='Logo')
             h5 Deletar Crachá(s)
 
-            p.card-text Deletar os crachás selecionados?
+            p.card-text Deletar o(s) crachás selecionados?
 
             .d-flex.gap-3
-              .btn.btn-primary Deletar
-              .btn.btn-danger(onclick='hidePopup()') Cancelar
+              .submit.btn.btn-danger(onclick='deletarCards()') Deletar
+              #cancel-delete-btn.btn.btn-outline-primary(onclick='hidePopup()') Cancelar

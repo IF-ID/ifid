@@ -4,10 +4,11 @@ let selectedMultiple = new Set();
 const selectSingle = (id) => {
   selectedSingle = id;
   updateSelected();
+  updatePreview();
 }
 
 const getSelected = () => {
-  return selectedMultiple.size > 0 ? selectedMultiple : [selectedSingle];
+  return selectedMultiple.size > 0 ? selectedMultiple : new Set([selectedSingle]);
 }
 
 const selectMultiple = (id, value) => {
@@ -32,7 +33,8 @@ const updateSelected = () => {
   }
 
   const deletarBtn = $('#deletar-btn');
-  if (selectedSingle > 0 || selectedMultiple.size > 0) {
+
+if (selectedMultiple.size > 0 || selectedSingle > -1) {
     deletarBtn.removeClass('disabled');
   } else {
     deletarBtn.addClass('disabled');
