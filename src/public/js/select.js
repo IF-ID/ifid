@@ -27,9 +27,10 @@ const updateSelected = () => {
   let selected = getSelected();
 
   cardList.find('li.selected').removeClass('selected');
-  
+
   for (let id of selected) {
-    cardList.find(`li[data-id="${id}"]`).addClass('selected');
+    const card = cardList.find(`li[data-id="${id}"]`)
+    card.addClass('selected');
   }
 
   const deletarBtn = $('#deletar-btn');

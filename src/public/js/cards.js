@@ -24,9 +24,10 @@ const showCards = () => {
   cardsContainerCopy.empty();
 
   for (const card of cards.values()) {
-    const cardHtml = cardTemplate
+    let cardHtml = cardTemplate
       .replace('{{nome}}', card.nome)
       .replaceAll('{{id}}', card.id);
+      
     cardsContainerCopy.append(cardHtml);
   }
 

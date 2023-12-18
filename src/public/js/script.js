@@ -1,3 +1,13 @@
+const capitalize = (str) => {
+  const words = str.split(' ');
+  const capitalizedWords = words.map(word => {
+    const firstLetter = word.charAt(0).toUpperCase();
+    const restOfWord = word.slice(1).toLowerCase();
+    return firstLetter + restOfWord;
+  });
+  return capitalizedWords.join(' ');
+}
+
 const showPopup = (templateId) => {
   const template = $(templateId).html();
   $(document.body).append(template);
@@ -7,8 +17,19 @@ const showPopupEditCard = () => {
   const containerTemplate = $('#alterar-cracha-container-template').html();
   const template = $('#alterar-cracha-template').html();
 
-  const html = containerTemplate.replace('{{content}}', template+template+template+template);
-  $(document.body).append(html);
+  let html =''
+  const selected = getSelected();
+
+  for (let id of selected) {
+    const card = cards.get(id);
+    html += template
+      .replace('{{id}}', card.id)
+      .replaceAll('{{nome}}', capitalize(card.nome))
+      .replace('{{matricula}}', card.matricula)
+      .replace(`value="${card.curso}"`, `value="${card.curso}" selected`);
+  }
+
+  $(document.body).append(containerTemplate.replace('{{content}}', html));
 }
 
 const hidePopup = () => {
