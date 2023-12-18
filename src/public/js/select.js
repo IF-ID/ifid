@@ -33,10 +33,16 @@ const updateSelected = () => {
   }
 
   const deletarBtn = $('#deletar-btn');
+  const exportarBtn = $('#exportar-btn');
+  const modificarBtn = $('#modificar-btn');
 
 if (selectedMultiple.size > 0 || selectedSingle > -1) {
     deletarBtn.removeClass('disabled');
+    exportarBtn.removeClass('disabled');
+    modificarBtn.removeClass('disabled');
   } else {
     deletarBtn.addClass('disabled');
+    exportarBtn.addClass('disabled');
+    modificarBtn.addClass('disabled');
   }
 }

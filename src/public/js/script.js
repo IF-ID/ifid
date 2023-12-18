@@ -3,6 +3,14 @@ const showPopup = (templateId) => {
   $(document.body).append(template);
 }
 
+const showPopupEditCard = () => {
+  const containerTemplate = $('#alterar-cracha-container-template').html();
+  const template = $('#alterar-cracha-template').html();
+
+  const html = containerTemplate.replace('{{content}}', template+template+template+template);
+  $(document.body).append(html);
+}
+
 const hidePopup = () => {
   const overlay = $('#overlay');
   overlay.fadeOut(complete = () => {
