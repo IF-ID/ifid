@@ -32,6 +32,27 @@ const showPopupEditCard = () => {
   $(document.body).append(containerTemplate.replace('{{content}}', html));
 }
 
+const showPopupExportCards = () => {
+  const containerTemplate = $('#exportar-crachas-container-template').html();
+  const template = $('#exportar-crachas-template').html();
+
+  const selected = getSelected();
+  
+  let crachas = '';
+  for (let id of selected) {
+    const card = cards.get(id);
+    crachas += template
+      .replace('{{cracha}}', card.image)
+      .replace('{{nome}}', card.nome)
+      .replace('{{matricula}}', card.matricula)
+      .replace('{{curso}}', card.curso);
+  }
+
+  const content = containerTemplate.replace('{{crachas}}', crachas);
+
+  $(document.body).append(content);
+}
+
 const hidePopup = () => {
   const overlay = $('#overlay');
   overlay.fadeOut(complete = () => {
@@ -67,6 +88,33 @@ const alterarCards = async (cards) => {
   hidePopup();
 }
 
+const exportarJPG = async () => {
+  const loadingTemplate = $('#loading-template').html();
+  const loading = loadingTemplate.replace('{{mensagem}}', 'Exportando Crachás...');
+  $('.jpg').html(loading);
+  $('.pdf').addClass('disabled');
+  $('.btn-close').addClass('disabled');
+
+  const exportForm = $('#exportar-crachas-form');
+  exportForm.attr('action', '/exportar/jpg');
+  exportForm.trigger('submit');
+
+  hidePopup();
+}
+
+const exportarPDF = async () => {
+  const loadingTemplate = $('#loading-template').html();
+  const loading = loadingTemplate.replace('{{mensagem}}', 'Exportando Crachás...');
+  $('.pdf').html(loading);
+  $('.jpg').addClass('disabled');
+  $('.btn-close').addClass('disabled');
+
+  const exportForm = $('#exportar-crachas-form');
+  exportForm.attr('action', '/exportar/pdf');
+  exportForm.trigger('submit');
+
+  hidePopup();
+}
 
 $(() => {
   if (!sessionStorage.aviso) {

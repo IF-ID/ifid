@@ -6,6 +6,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./src/routes/index.route');
 var cardRouter = require('./src/routes/card.route');
+var exportRouter = require('./src/routes/export.route');
 
 var app = express();
 
@@ -25,6 +26,7 @@ app.use('/js', express.static(__dirname + '/node_modules/jquery/dist')); // redi
 
 app.use('/', indexRouter);
 app.use('/gerarCrachas', cardRouter);
+app.use('/exportar', exportRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

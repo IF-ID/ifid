@@ -1,33 +1,22 @@
-template#exportar-cracha-template
+template#exportar-crachas-container-template
   #overlay.scroll
     .container.h-100
       .d-flex.flex-column.align-items-center.h-100
-        form.card.rounded-5.p-5.w-75.my-auto
+        form#exportar-crachas-form.card.rounded-5.p-5.w-75.my-auto(action='', method='POST', enctype, target='_blank')
           .d-flex.flex-column.align-items-center.gap-3.position-relative
             .btn-close.position-absolute.top-0.end-0.fs-5.translate-middle(onclick='hidePopup()')
             img.mb-3(src='assets/images/logo2.png', style='height: 5em;', alt='Logo')
             h5 Exportar Crachás
 
             .overflow-x-auto.w-100
-              .d-flex
-                img.exportar-preview(src='assets/images/crachasPlaceholder.jpg', alt='Crachá de identificação')
-                img.exportar-preview(src='assets/images/crachasPlaceholder.jpg', alt='Crachá de identificação')
-                img.exportar-preview(src='assets/images/crachasPlaceholder.jpg', alt='Crachá de identificação')
-                img.exportar-preview(src='assets/images/crachasPlaceholder.jpg', alt='Crachá de identificação')
-                img.exportar-preview(src='assets/images/crachasPlaceholder.jpg', alt='Crachá de identificação')
-                img.exportar-preview(src='assets/images/crachasPlaceholder.jpg', alt='Crachá de identificação')
-                img.exportar-preview(src='assets/images/crachasPlaceholder.jpg', alt='Crachá de identificação')
-                img.exportar-preview(src='assets/images/crachasPlaceholder.jpg', alt='Crachá de identificação')
-                img.exportar-preview(src='assets/images/crachasPlaceholder.jpg', alt='Crachá de identificação')
-                img.exportar-preview(src='assets/images/crachasPlaceholder.jpg', alt='Crachá de identificação')
-                img.exportar-preview(src='assets/images/crachasPlaceholder.jpg', alt='Crachá de identificação')
-                img.exportar-preview(src='assets/images/crachasPlaceholder.jpg', alt='Crachá de identificação')
-                img.exportar-preview(src='assets/images/crachasPlaceholder.jpg', alt='Crachá de identificação')
-                img.exportar-preview(src='assets/images/crachasPlaceholder.jpg', alt='Crachá de identificação')
-                img.exportar-preview(src='assets/images/crachasPlaceholder.jpg', alt='Crachá de identificação')
-                img.exportar-preview(src='assets/images/crachasPlaceholder.jpg', alt='Crachá de identificação')
-                img.exportar-preview(src='assets/images/crachasPlaceholder.jpg', alt='Crachá de identificação')
+              .d-flex.justify-content-center.gap-1 {{crachas}}
 
             .d-flex.gap-3
-              .btn.btn-primary Exportar para JPG
-              .btn.btn-primary Exportar para PDF
+              button.jpg.btn.btn-primary(type='button', onclick='exportarJPG()') Exportar para JPG
+              button.pdf.btn.btn-primary(type='button', onclick='exportarPDF()') Exportar para PDF
+
+template#exportar-crachas-template
+  img.exportar-preview.border(src='{{cracha}}', alt='Crachá de identificação')
+  input(type='hidden', name='nomes', value='{{nome}}')
+  input(type='hidden', name='matriculas', value='{{matricula}}')
+  input(type='hidden', name='cursos', value='{{curso}}')
