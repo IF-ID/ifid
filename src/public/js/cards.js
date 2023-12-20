@@ -70,6 +70,7 @@ const addCard = async (card, reload=true) => {
   selectSingle(card.id);
   maxId++;
 
+  selectedMultiple.clear();
   localStorage.setItem('cards', JSON.stringify(Array.from(cards.values())));
   if (reload) showCards();
 }
@@ -116,6 +117,7 @@ const updateCards = async (cardList) => {
     }
     cards.set(newCard.id, newCard);
   }
-
+  selectedMultiple.clear();
+  localStorage.setItem('cards', JSON.stringify(Array.from(cards.values())));
   showCards()
 }
