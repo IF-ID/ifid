@@ -83,3 +83,27 @@ const validateCard = (callback) => {
     callback ? callback({ nome, matricula, curso }) : null;
   };
 }
+
+const validateCards = async (callback) => {
+  let valid = true;
+
+  let cards = $('.fieldset');
+  let cardList = [];
+
+  for (let card of cards) {
+    let id = card.dataset.id;
+    let nome = validateNome(`.fieldset[data-id="${id}"] .nome`);
+    let matricula = validateMatricula(`.fieldset[data-id="${id}"] .matricula`);
+    let curso = validateCurso(`.fieldset[data-id="${id}"] .curso`);
+
+    if (nome && matricula && curso) {
+      cardList.push({ id, nome, matricula, curso: parseInt(curso) });
+    } else {
+      valid = false;
+    }
+  }
+
+  if (valid) {
+    callback ? callback(cardList) : null;
+  }
+}

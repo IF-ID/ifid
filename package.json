@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "debug": "export DEBUG=ifid:* && npm start",
+    "debug": "export DEBUG=ifid:* && nodemon ./bin/www",
     "test": "jest --detectOpenHandles",
     "migration": "node ./migration/migration.js",
     "example": "node ./examples/criarCracha.example.js",

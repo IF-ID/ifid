@@ -39,6 +39,12 @@ const getCurso = async (idCurso) => {
   return curso ? curso.dataValues : false;
 }
 
+const getCursos = async (idCursos) => {
+  const cursos = await Cursos.findAll({ where: { id_curso: idCursos } });
+
+  return cursos.map(curso => curso.dataValues);
+}
+
 const getAllCursos = async () => {
   const cursos = await Cursos.findAll();
 
@@ -70,4 +76,4 @@ const deletarCurso = async (idCurso) => {
   return true;
 }
 
-module.exports = { criarCurso, getCurso, getAllCursos, getModalidades, getCursosByModalidade, deletarCurso };
+module.exports = { criarCurso, getCurso, getCursos, getAllCursos, getModalidades, getCursosByModalidade, deletarCurso };

@@ -24,7 +24,7 @@ app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/js')); /
 app.use('/js', express.static(__dirname + '/node_modules/jquery/dist')); // redirect JS jQuery
 
 app.use('/', indexRouter);
-app.use('/gerarCracha', cardRouter);
+app.use('/gerarCrachas', cardRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

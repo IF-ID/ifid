@@ -43,14 +43,23 @@ const updatePreview = () => {
 } 
 
 const generateCard = async (card) => {
-  const data = { 
+  const data = [{ 
     nome: card.nome,
     matricula: card.matricula,
-    modalidade: card.modalidade,
-    curso: card.curso
-  }
+    curso: parseInt(card.curso)
+  }];
 
-  cardImage = await $.post('/gerarCracha', data);
+  const settings = {
+    "url": "/gerarCrachas",
+    "method": "POST",
+    "timeout": 0,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "data": JSON.stringify(data),
+  };
+  
+  const cardImage = await $.ajax(settings);
   return cardImage;
 }
 
@@ -81,4 +90,32 @@ const deleteCards = async () => {
   
   updateSelected();
   showCards();
+}
+
+const updateCards = async (cardList) => {
+  const settings = {
+    "url": "/gerarCrachas",
+    "method": "POST",
+    "timeout": 0,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "data": JSON.stringify(cardList),
+  };
+  
+  const cardImages = await $.ajax(settings);
+  
+  
+  for (const [index, card] of Object.entries(cardList)) {
+    const newCard = {
+      id: parseInt(card.id),
+      nome: card.nome,
+      matricula: card.matricula,
+      curso: parseInt(card.curso),
+      image: cardImages[index] 
+    }
+    cards.set(newCard.id, newCard);
+  }
+
+  showCards()
 }

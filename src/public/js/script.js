@@ -58,6 +58,16 @@ const deletarCards = async () => {
   hidePopup();
 }
 
+const alterarCards = async (cards) => {
+  const loadingTemplate = $('#loading-template').html();
+  const loading = loadingTemplate.replace('{{mensagem}}', 'Alterando Crachás...');
+  $('.submit').html(loading);
+  $('.btn-close').addClass('disabled');
+  await updateCards(cards);
+  hidePopup();
+}
+
+
 $(() => {
   if (!sessionStorage.aviso) {
     showPopup('#aviso-template');

@@ -1,8 +1,15 @@
 template#alterar-cracha-template
   .fieldset.d-flex.flex-column.w-100.gap-2.my-3(data-id='{{id}}')
     h6.text-capitalize {{nome}}
-    input.form-control.form-control-lg.px-5.py-3(type='text', value='{{nome}}')
-    input.form-control.form-control-lg.px-5.py-3(type='text', value='{{matricula}}')
-    select.form-select.form-select-lg.px-5.py-3
-      each curso in cursos
-        option(value=curso.id_curso)= curso.nome_curso
+
+    .nome.w-100
+      input.input.form-control.form-control-lg.px-5.py-3(type='text', maxLength=45, value='{{nome}}', oninput='validateNome(this.parentElement)')
+      small.error.text-danger
+    .matricula.w-100
+      input.input.form-control.form-control-lg.px-5.py-3(type='text', maxLength=11, value='{{matricula}}', oninput='validateMatricula(this.parentElement)')
+      small.error.text-danger
+    .curso.w-100
+      select.input.form-select.form-select-lg.px-5.py-3(onchange='validateCurso(this.parentElement)')
+        each curso in cursos
+          option(value=curso.id_curso)= curso.nome_curso
+      small.error.text-danger
