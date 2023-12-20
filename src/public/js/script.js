@@ -99,6 +99,10 @@ const exportarJPG = async () => {
   exportForm.attr('action', '/exportar/jpg');
   exportForm.trigger('submit');
 
+  selectedMultiple.clear();
+  showCards();
+  updateSelected();
+
   hidePopup();
 }
 
@@ -112,6 +116,10 @@ const exportarPDF = async () => {
   const exportForm = $('#exportar-crachas-form');
   exportForm.attr('action', '/exportar/pdf');
   exportForm.trigger('submit');
+
+  selectedMultiple.clear();
+  showCards();
+  updateSelected();
 
   hidePopup();
 }
