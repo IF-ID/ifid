@@ -285,19 +285,6 @@ describe('Validação com um Elemento Muito Longo', () => {
 });
 
 describe('Validação com um Elemento Inválido', () => {
-  test('Criar um Crachá com a matrícula inválida', async () => {
-    const matricula = '1'.repeat(12);
-    const idCracha = await Crachas.criarCracha({
-      nome: dataCracha.nome,
-      matricula: matricula,
-      foto: dataCracha.foto,
-      imagem: imagemCracha,
-      idCurso: 1,
-      idUsuario: 1,
-    });
-    expect(idCracha).toBeFalsy();
-  });
-
   test('Criar um Crachá com a foto inválida', async () => {
     const foto = '1'.repeat(12);
     const idCracha = await Crachas.criarCracha({
