@@ -282,6 +282,7 @@ describe('Validação com um Elemento Muito Longo', () => {
     });
     expect(idCracha).toBeFalsy();
   });
+});
 
 describe('Validação com um Elemento Inválido', () => {
   test('Criar um Crachá com a matrícula inválida', async () => {
