@@ -48,9 +48,6 @@ const validateMatricula = (id) => {
   } else if (isNaN(value)) {
     message = 'A matrícula do aluno deve conter apenas números.';
     valid = false;
-  } else if (value.length != 11) {
-    message = 'A matrícula do aluno deve ter 11 caracteres.';
-    valid = false;
   }
 
   handleField(field, valid, message);
