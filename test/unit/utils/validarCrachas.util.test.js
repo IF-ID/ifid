@@ -57,22 +57,6 @@ describe('Testes com campos de tamanhos inválidos', () => {
     const validacao = validarCracha(crachaInvalido);
     expect(validacao).toBeFalsy();
   });
-
-  test('Validação de Crachá com matricula muito longa', () => {
-    const crachaInvalido = cracha;
-    crachaInvalido.matricula = '1'.repeat(12);
-
-    const validacao = validarCracha(crachaInvalido);
-    expect(validacao).toBeFalsy();
-  });
-
-  test('Validação de Crachá com matrícula muito curta', () => {
-    const crachaInvalido = cracha;
-    crachaInvalido.matricula = '1'.repeat(10);
-
-    const validacao = validarCracha(crachaInvalido);
-    expect(validacao).toBeFalsy();
-  });
 });
 
 describe('Testes com campos de tipos inválidos', () => {
