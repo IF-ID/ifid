@@ -37,7 +37,7 @@ const validarCurso = (curso) => {
 const validarCracha = (cracha) => {
   if (!cracha.nome || !cracha.matricula || !cracha.foto || !cracha.imagem || !cracha.idCurso || !cracha.idUsuario) return false;
 
-  if (cracha.nome.length > 45 || cracha.matricula.length != 11) return false;
+  if (cracha.nome.length > 45) return false;
 
   if (!isDataUri(cracha.foto) || !isDataUri(cracha.imagem)) return false;
 
