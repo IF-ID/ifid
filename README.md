@@ -214,4 +214,4 @@ git --version
 - Criar múltiplos crachás ao mesmo tempo;
 - Possibilitar que o usuário exporte os seus crachás de forma individual ou em grupo, para pdf ou em png;
 - Página minimalista para facilitar o processo de criação dos crachás;
-- Criar crachá sem fazer login.
+- Criar crachá sem fazer login. 
